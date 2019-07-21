@@ -18,7 +18,7 @@ public class BaseTest {
     @BeforeSuite
     public void setUp() {
 
-        driver = WebDriverContainer.getInstance("UbuntuChrome");
+        driver = WebDriverContainer.getInstance("MacChrome");
 
         LoginPage loginPage = new LoginPage(driver);
         BoardsPage boardsPage = new BoardsPage(driver);

@@ -2,6 +2,7 @@ package core;
 
 import config.Constants;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -35,7 +36,11 @@ public class WebDriverContainer {
                     driver = new RemoteWebDriver(serverUrl, capabilities);
                     driver.manage().window().maximize();
                     break;
-                case "Firefox":
+                case "MacChrome":
+                    driver = new ChromeDriver();
+                    driver.manage().window().maximize();
+                    break;
+                case "MacFirefox":
                     driver = new FirefoxDriver();
                     driver.manage().window().maximize();
                     break;
