@@ -1,10 +1,10 @@
 package pageObject;
 
-import com.codeborne.selenide.WebDriverRunner;
 import config.Constants;
 import org.openqa.selenium.By;
 import org.openqa.selenium.InvalidSelectorException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
 import static com.codeborne.selenide.Selenide.$;
@@ -20,7 +20,7 @@ public class BoardsPage {
 
     public BoardsPage(WebDriver driver) {
         this.driver = driver;
-        WebDriverRunner.setWebDriver(driver);
+        PageFactory.initElements(driver, this);
     }
 
     private final By homePageButton = By.xpath("//span[@name='house']");

@@ -1,9 +1,9 @@
 package pageObject;
 
-import com.codeborne.selenide.WebDriverRunner;
 import org.openqa.selenium.By;
 import org.openqa.selenium.InvalidSelectorException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
 import static com.codeborne.selenide.Selenide.$;
@@ -18,7 +18,7 @@ public class BoardPage {
 
     public BoardPage(WebDriver driver) {
         this.driver = driver;
-        WebDriverRunner.setWebDriver(driver);
+        PageFactory.initElements(driver, this);
     }
 
     private final By testBoardTitle = By.xpath("//span[contains(text(),'TestBoard')]");

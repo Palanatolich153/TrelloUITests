@@ -1,9 +1,9 @@
 package pageObject;
 
-import com.codeborne.selenide.WebDriverRunner;
 import config.Constants;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
 
 import static com.codeborne.selenide.Condition.exactValue;
 import static com.codeborne.selenide.Selenide.$;
@@ -18,7 +18,7 @@ public class LoginPage {
 
     public LoginPage(WebDriver driver) {
         this.driver = driver;
-        WebDriverRunner.setWebDriver(driver);
+        PageFactory.initElements(driver, this);
     }
 
     private final By loginButton = By.cssSelector("#login");
