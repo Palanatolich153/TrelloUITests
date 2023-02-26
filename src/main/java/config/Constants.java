@@ -1,7 +1,7 @@
 package config;
 
 public class Constants {
-
+//urls
     /**
      * URLs
      */
